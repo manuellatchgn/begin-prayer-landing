@@ -363,11 +363,32 @@ footer a:hover {
   .hero h1 {
     font-size: 38px;
   }
+}
+
+@media (min-width: 540px) {
+  /* Reviews: 3 columns, no scroll */
+  .reviews-scroll {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    padding: 4px 20px 8px;
+  }
+  .review-card {
+    flex: 1 1 calc(33.33% - 8px);
+    min-width: 0;
+  }
+
+  /* Screenshots: 3 columns × 2 rows, no scroll */
+  .screenshot-scroll {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    padding: 0 20px 16px;
+    justify-content: center;
+  }
   .screenshot-card {
-    flex: 0 0 160px;
+    flex: 0 0 calc(33.33% - 10px);
   }
   .screenshot-card img {
-    width: 160px;
+    width: 100%;
   }
 }
 
@@ -378,12 +399,6 @@ footer a:hover {
   .hero h1 {
     font-size: 44px;
   }
-  .screenshot-card {
-    flex: 0 0 160px;
-  }
-  .screenshot-card img {
-    width: 160px;
-  }
 }
 </style>
 </head>
@@ -392,7 +407,7 @@ footer a:hover {
 <!-- ── Hero ── -->
 <section class="hero">
   <img src="icon.png" alt="Begin Prayer app icon" class="hero-icon" width="88" height="88">
-  <h1>Your <span class="gold">personalized</span> daily prayer journal, built for you</h1>
+  <h1>Your <span class="gold">personalized</span> daily prayer journal, built <span class="gold">for you</span></h1>
   <p class="subline">Grow closer to God every day with scripture, prayer, and reflection — tailored to your journey.</p>
   <div class="store-buttons" data-position="hero">
     <a href="https://apps.apple.com/fr/app/begin-prayer-bible-journal/id6760112071" class="store-btn store-btn--apple" target="_blank" rel="noopener">
