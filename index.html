@@ -50,7 +50,7 @@ body {
 /* ── Hero ── */
 .hero {
   text-align: center;
-  padding: 60px 20px 48px;
+  padding: 60px 20px 20px;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -129,13 +129,24 @@ body {
   font-weight: 700;
 }
 
-/* Both store buttons always visible */
+.free-trial-line {
+  text-align: center;
+  font-size: 13px;
+  color: #8a7a6a;
+  margin-top: 12px;
+}
+
+/* Device-specific store buttons */
+body.is-ios .store-btn--google { display: none; }
+body.is-android .store-btn--apple { display: none; }
+body.is-ios .store-buttons,
+body.is-android .store-buttons { max-width: 280px; }
 
 /* ── Reviews ── */
 .reviews {
   border-top: 1px solid #2a1f10;
   border-bottom: 1px solid #2a1f10;
-  padding: 32px 0;
+  padding: 8px 0 32px;
 }
 
 .reviews-inner {
@@ -244,7 +255,7 @@ body {
   display: flex;
   gap: 14px;
   overflow-x: auto;
-  padding: 0 20px 16px;
+  padding: 0 24px 16px;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -255,13 +266,13 @@ body {
 }
 
 .screenshot-card {
-  flex: 0 0 160px;
+  flex: 0 0 260px;
   scroll-snap-align: start;
   cursor: pointer;
 }
 
 .screenshot-card img {
-  width: 160px;
+  width: 100%;
   height: auto;
   border-radius: 16px;
   border: 1px solid #2a1f10;
@@ -374,8 +385,17 @@ footer a:hover {
     flex: 1 1 calc(33.33% - 8px);
     min-width: 0;
   }
+}
 
-  /* Screenshots: 3 columns × 2 rows, no scroll */
+@media (min-width: 768px) {
+  .hero {
+    padding: 80px 20px 20px;
+  }
+  .hero h1 {
+    font-size: 44px;
+  }
+
+  /* Screenshots: 3 columns × 2 rows grid, no scroll */
   .screenshot-scroll {
     flex-wrap: wrap;
     overflow-x: visible;
@@ -384,18 +404,6 @@ footer a:hover {
   }
   .screenshot-card {
     flex: 0 0 calc(33.33% - 10px);
-  }
-  .screenshot-card img {
-    width: 100%;
-  }
-}
-
-@media (min-width: 768px) {
-  .hero {
-    padding: 80px 20px 56px;
-  }
-  .hero h1 {
-    font-size: 44px;
   }
 }
 </style>
@@ -417,6 +425,7 @@ footer a:hover {
       <span class="btn-text"><small>Download on</small><strong>Google Play</strong></span>
     </a>
   </div>
+  <p class="free-trial-line">Free for 3 days — no commitment required.</p>
 </section>
 
 <!-- ── Reviews ── -->
@@ -556,16 +565,14 @@ footer a:hover {
   var params = new URLSearchParams(window.location.search);
   var source = params.get('ref') || 'direct';
 
-  // ── Amplitude init ──
+  // ── Amplitude ──
   var amp = window.amplitude;
-  if (amp && amp.init) {
-    amp.init('ba6296d2b530ccc68df475c9d7fda641', undefined, { defaultTracking: false });
-  }
 
   function track(event, props) {
+    if (!amp || !amp.track) return;
     props = props || {};
     props.source = source;
-    if (amp) amp.track(event, props);
+    amp.track(event, props);
   }
 
   // ── landing_page_viewed ──
