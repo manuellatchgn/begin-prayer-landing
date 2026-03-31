@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 
 <!-- Amplitude SDK -->
-<script src="https://cdn.amplitude.com/libs/analytics-browser-2.3.5-min.js.gz"></script>
+<script src="https://cdn.amplitude.com/script/ba6296d2b530ccc68df475c9d7fda641.js"></script>
 
 <style>
 *, *::before, *::after {
@@ -558,8 +558,8 @@ footer a:hover {
 
   // ── Amplitude init ──
   var amp = window.amplitude;
-  if (amp) {
-    amp.init('ba6296d2b530ccc68df475c9d7fda641', { defaultTracking: false });
+  if (amp && amp.init) {
+    amp.init('ba6296d2b530ccc68df475c9d7fda641', undefined, { defaultTracking: false });
   }
 
   function track(event, props) {
