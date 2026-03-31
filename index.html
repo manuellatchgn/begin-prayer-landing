@@ -140,6 +140,11 @@ body.is-android .store-btn--apple { display: none; }
   padding: 32px 0;
 }
 
+.reviews-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .reviews-header {
   display: flex;
   align-items: center;
@@ -221,6 +226,8 @@ body.is-android .store-btn--apple { display: none; }
 /* ── Screenshots ── */
 .screenshots {
   padding: 48px 0;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .screenshots .container {
@@ -258,8 +265,6 @@ body.is-android .store-btn--apple { display: none; }
 .screenshot-card img {
   width: 160px;
   height: auto;
-  aspect-ratio: 9 / 19.5;
-  object-fit: cover;
   border-radius: 16px;
   border: 1px solid #2a1f10;
   background: #1a1108;
@@ -359,10 +364,10 @@ footer a:hover {
     font-size: 38px;
   }
   .screenshot-card {
-    flex: 0 0 180px;
+    flex: 0 0 160px;
   }
   .screenshot-card img {
-    width: 180px;
+    width: 160px;
   }
 }
 
@@ -374,10 +379,10 @@ footer a:hover {
     font-size: 44px;
   }
   .screenshot-card {
-    flex: 0 0 200px;
+    flex: 0 0 160px;
   }
   .screenshot-card img {
-    width: 200px;
+    width: 160px;
   }
 }
 </style>
@@ -396,38 +401,40 @@ footer a:hover {
     </a>
     <a href="https://play.google.com/store/apps/details?id=com.mtstudio.holyfaith" class="store-btn store-btn--google" target="_blank" rel="noopener">
       <svg width="20" height="22" viewBox="0 0 20 22" fill="none"><path d="M1.13.52A1.5 1.5 0 0 0 .5 1.75v18.5c0 .5.24.96.63 1.23L11.25 11 1.13.52z" fill="#4285F4"/><path d="M14.92 7.33 3.92.02A1.49 1.49 0 0 0 1.13.52L11.25 11l3.67-3.67z" fill="#EA4335"/><path d="M1.13 21.48c.44.34 1.02.42 1.53.2l-.02-.01 11.01-6.34L11.25 11 1.13 21.48z" fill="#34A853"/><path d="M18.81 9.63l-3.89-2.3L11.25 11l3.67 3.67 3.89-2.3a1.5 1.5 0 0 0 0-2.74z" fill="#FBBC05"/></svg>
-      <span class="btn-text"><small>Get it on</small><strong>Google Play</strong></span>
+      <span class="btn-text"><small>Download on</small><strong>Google Play</strong></span>
     </a>
   </div>
 </section>
 
 <!-- ── Reviews ── -->
 <section class="reviews">
-  <div class="reviews-header">
-    <span class="reviews-rating">5.0</span>
-    <div>
-      <div class="reviews-stars">★★★★★</div>
-      <div class="reviews-label">App Store ratings</div>
+  <div class="reviews-inner">
+    <div class="reviews-header">
+      <span class="reviews-rating">5.0</span>
+      <div>
+        <div class="reviews-stars">★★★★★</div>
+        <div class="reviews-label">App Store ratings</div>
+      </div>
     </div>
-  </div>
-  <div class="reviews-scroll">
-    <div class="review-card">
-      <div class="review-card-stars">★★★★★</div>
-      <div class="review-card-title">Easy and very useful</div>
-      <div class="review-card-body">"It brings a sense of peace and structure to my daily routine. Highly recommend."</div>
-      <div class="review-card-meta">Danie9293 &middot; Mar 20</div>
-    </div>
-    <div class="review-card">
-      <div class="review-card-stars">★★★★★</div>
-      <div class="review-card-title">Best app to stay close to God</div>
-      <div class="review-card-body">"Amazing app, very easy to use. Helps me stay consistent in my relationship with God &#x1F64F;"</div>
-      <div class="review-card-meta">TH0111 &middot; Mar 14</div>
-    </div>
-    <div class="review-card">
-      <div class="review-card-stars">★★★★★</div>
-      <div class="review-card-title">Well done</div>
-      <div class="review-card-body">"Well thought. Really helps me re-connect with God."</div>
-      <div class="review-card-meta">Maci1341</div>
+    <div class="reviews-scroll">
+      <div class="review-card">
+        <div class="review-card-stars">★★★★★</div>
+        <div class="review-card-title">Easy and very useful</div>
+        <div class="review-card-body">"It brings a sense of peace and structure to my daily routine. Highly recommend."</div>
+        <div class="review-card-meta">Danie9293 &middot; Mar 20</div>
+      </div>
+      <div class="review-card">
+        <div class="review-card-stars">★★★★★</div>
+        <div class="review-card-title">Best app to stay close to God</div>
+        <div class="review-card-body">"Amazing app, very easy to use. Helps me stay consistent in my relationship with God &#x1F64F;"</div>
+        <div class="review-card-meta">TH0111 &middot; Mar 14</div>
+      </div>
+      <div class="review-card">
+        <div class="review-card-stars">★★★★★</div>
+        <div class="review-card-title">Well done</div>
+        <div class="review-card-body">"Well thought. Really helps me re-connect with God."</div>
+        <div class="review-card-meta">Maci1341</div>
+      </div>
     </div>
   </div>
 </section>
@@ -509,7 +516,7 @@ footer a:hover {
     </a>
     <a href="https://play.google.com/store/apps/details?id=com.mtstudio.holyfaith" class="store-btn store-btn--google" target="_blank" rel="noopener">
       <svg width="20" height="22" viewBox="0 0 20 22" fill="none"><path d="M1.13.52A1.5 1.5 0 0 0 .5 1.75v18.5c0 .5.24.96.63 1.23L11.25 11 1.13.52z" fill="#4285F4"/><path d="M14.92 7.33 3.92.02A1.49 1.49 0 0 0 1.13.52L11.25 11l3.67-3.67z" fill="#EA4335"/><path d="M1.13 21.48c.44.34 1.02.42 1.53.2l-.02-.01 11.01-6.34L11.25 11 1.13 21.48z" fill="#34A853"/><path d="M18.81 9.63l-3.89-2.3L11.25 11l3.67 3.67 3.89-2.3a1.5 1.5 0 0 0 0-2.74z" fill="#FBBC05"/></svg>
-      <span class="btn-text"><small>Get it on</small><strong>Google Play</strong></span>
+      <span class="btn-text"><small>Download on</small><strong>Google Play</strong></span>
     </a>
   </div>
 </section>
