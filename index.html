@@ -360,6 +360,115 @@ footer a:hover {
   color: #D4A056;
 }
 
+/* ── Sticky Bar ── */
+.sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1a1108;
+  border-top: 1px solid #2a1f10;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  height: 60px;
+  transform: translateY(0);
+  transition: transform 300ms ease;
+}
+
+.sticky-bar--hidden {
+  transform: translateY(100%);
+}
+
+.sticky-bar__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.sticky-bar__text {
+  font-size: 13px;
+  color: #ffffff;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sticky-bar__actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.sticky-bar__btn {
+  background: #D4A056;
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.sticky-bar__close {
+  background: none;
+  border: none;
+  color: #8a7a6a;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px 6px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* ── Mobile primary button emphasis (< 540px) ── */
+@media (max-width: 539px) {
+  body.is-ios .store-btn--apple,
+  body.is-android .store-btn--google {
+    padding: 18px 24px;
+    background: #D4A056;
+    color: #000000;
+    border-color: #D4A056;
+  }
+
+  body.is-ios .store-btn--apple .btn-text small,
+  body.is-android .store-btn--google .btn-text small {
+    color: rgba(0, 0, 0, 0.55);
+  }
+
+  body.is-ios .store-btn--apple .btn-text strong,
+  body.is-android .store-btn--google .btn-text strong {
+    font-size: 17px;
+  }
+}
+
+/* ── Social proof stars ── */
+.social-proof__stars {
+  font-size: 20px;
+  color: #D4A056;
+  letter-spacing: 3px;
+  margin-bottom: 4px;
+}
+
+.social-proof__label {
+  font-size: 14px;
+  color: #8a7a6a;
+}
+
+.social-proof__join {
+  color: #D4A056;
+  font-size: 13px;
+  margin-top: 8px;
+  text-align: center;
+}
+
 /* ── Responsive ── */
 @media (min-width: 480px) {
   .hero h1 {
@@ -407,7 +516,7 @@ footer a:hover {
 <section class="hero">
   <img src="icon.png" alt="Begin Prayer app icon" class="hero-icon" width="88" height="88">
   <h1>Your <span class="gold">personalized</span> daily prayer journal, built <span class="gold">for you</span></h1>
-  <p class="subline">Grow closer to God every day with scripture, prayer, and reflection — tailored to your journey.</p>
+  <p class="subline">5 minutes a day. Build a prayer habit that actually sticks.</p>
   <div class="store-buttons" data-position="hero">
     <a href="https://apps.apple.com/fr/app/begin-prayer-bible-journal/id6760112071" class="store-btn store-btn--apple" target="_blank" rel="noopener">
       <svg width="20" height="24" viewBox="0 0 20 24" fill="white"><path d="M16.52 12.46c-.03-2.87 2.34-4.24 2.45-4.31-1.33-1.95-3.41-2.22-4.15-2.25-1.77-.18-3.45 1.04-4.34 1.04-.9 0-2.28-1.02-3.75-.99-1.93.03-3.71 1.12-4.7 2.85-2.01 3.48-.51 8.63 1.44 11.46.96 1.38 2.1 2.94 3.6 2.88 1.44-.06 1.99-.93 3.73-.93 1.74 0 2.24.93 3.76.9 1.55-.03 2.54-1.41 3.49-2.8 1.1-1.6 1.55-3.16 1.58-3.24-.04-.01-3.03-1.16-3.06-4.61zM13.68 3.92C14.49 2.93 15.04 1.58 14.9.2c-1.14.05-2.52.76-3.34 1.72-.73.85-1.37 2.2-1.2 3.5 1.27.1 2.57-.65 3.32-1.5z"/></svg>
@@ -427,7 +536,7 @@ footer a:hover {
       <span class="reviews-rating">5.0</span>
       <div>
         <div class="reviews-stars">★★★★★</div>
-        <div class="reviews-label">App Store ratings</div>
+        <div class="reviews-label">App Store &middot; 5.0 average</div>
       </div>
     </div>
     <div class="reviews-scroll">
@@ -450,6 +559,7 @@ footer a:hover {
         <div class="review-card-meta">Maci1341</div>
       </div>
     </div>
+    <p style="text-align:center;color:#D4A056;font-size:13px;margin-top:16px;">Join hundreds of believers praying daily</p>
   </div>
 </section>
 
@@ -540,6 +650,17 @@ footer a:hover {
   &copy; 2026 MT Studio &middot; <a href="https://www.mtstudioapp.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> &middot; support@mtstudio.app
 </footer>
 
+<!-- ── Sticky Bar ── -->
+<div id="sticky-bar" class="sticky-bar sticky-bar--hidden" role="complementary" aria-label="Download prompt">
+  <img src="icon.png" alt="" class="sticky-bar__icon" width="32" height="32">
+  <span class="sticky-bar__text">Begin Prayer &mdash; Free to start</span>
+  <div class="sticky-bar__actions">
+    <a id="sticky-btn-apple" class="sticky-bar__btn" href="https://apps.apple.com/fr/app/begin-prayer-bible-journal/id6760112071" target="_blank" rel="noopener">App Store</a>
+    <a id="sticky-btn-google" class="sticky-bar__btn" href="https://play.google.com/store/apps/details?id=com.mtstudio.holyfaith" target="_blank" rel="noopener">Google Play</a>
+  </div>
+  <button id="sticky-close" class="sticky-bar__close" aria-label="Close">&#x2715;</button>
+</div>
+
 <script>
 (function() {
   // ── Platform detection ──
@@ -572,12 +693,16 @@ footer a:hover {
 
   // ── CTA clicks ──
   var converted = false;
+  var clickedStores = {};
   document.querySelectorAll('.store-btn').forEach(function(btn) {
     btn.addEventListener('click', function() {
       converted = true;
       var store = btn.classList.contains('store-btn--apple') ? 'app_store' : 'google_play';
       var position = btn.closest('.store-buttons').dataset.position;
-      track('cta_clicked', { store: store, position: position });
+      if (!clickedStores[store]) {
+        clickedStores[store] = true;
+        track('cta_clicked', { store: store, position: position });
+      }
     });
   });
 
@@ -619,6 +744,63 @@ footer a:hover {
     var seconds = Math.round((Date.now() - pageStart) / 1000);
     track('page_exit', { time_on_page_seconds: seconds, converted: converted });
   });
+
+  // ── Sticky bar ──
+  if (!sessionStorage.getItem('sticky_closed')) {
+    var stickyBar = document.getElementById('sticky-bar');
+    var stickyBtnApple = document.getElementById('sticky-btn-apple');
+    var stickyBtnGoogle = document.getElementById('sticky-btn-google');
+    var stickyCloseBtn = document.getElementById('sticky-close');
+
+    // Show only the relevant store button on mobile
+    if (platform === 'ios') {
+      stickyBtnGoogle.style.display = 'none';
+    } else if (platform === 'android') {
+      stickyBtnApple.style.display = 'none';
+    }
+
+    function showStickyBar() {
+      if (!sessionStorage.getItem('sticky_closed')) {
+        stickyBar.classList.remove('sticky-bar--hidden');
+      }
+    }
+
+    // Trigger 1: 4-second delay
+    var stickyTimer = setTimeout(showStickyBar, 4000);
+
+    // Trigger 2: 30% scroll depth (fires once then removes itself)
+    var checkStickyScroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight > 0 && (scrollTop / docHeight) >= 0.3) {
+        clearTimeout(stickyTimer);
+        showStickyBar();
+        window.removeEventListener('scroll', checkStickyScroll);
+      }
+    };
+    window.addEventListener('scroll', checkStickyScroll, { passive: true });
+
+    // Track clicks (deduped via existing clickedStores guard)
+    stickyBtnApple.addEventListener('click', function() {
+      if (!clickedStores['app_store']) {
+        clickedStores['app_store'] = true;
+        track('cta_clicked', { store: 'app_store', position: 'sticky_bar' });
+      }
+    });
+
+    stickyBtnGoogle.addEventListener('click', function() {
+      if (!clickedStores['google_play']) {
+        clickedStores['google_play'] = true;
+        track('cta_clicked', { store: 'google_play', position: 'sticky_bar' });
+      }
+    });
+
+    // Close — persist for session
+    stickyCloseBtn.addEventListener('click', function() {
+      stickyBar.classList.add('sticky-bar--hidden');
+      sessionStorage.setItem('sticky_closed', '1');
+    });
+  }
 })();
 </script>
 </body>
